@@ -56,7 +56,7 @@ public class Population {
 
                         else { // individual still ill
                             individuals[i][j].individualillDays++;
-                            // individual might be cured according to the probabaility
+                            // individual may survive
                             if(individuals[i][j].individualillDays >=this.individualIllnessTime[1]){
                                 cureIndividual(i, j);
                             }
