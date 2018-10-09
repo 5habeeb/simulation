@@ -2,9 +2,8 @@ import java.util.ArrayList;
 
 public class Population {
 
-    double probOfInfection;
-    double probOfDeath;
-    double probOfCure;
+    double probabilityOfInfection;
+    double probabilityOfDeath;
 
     private int populationMatrixMaxLength;
     int[] individualIllnessTime = new int[2];
@@ -51,19 +50,14 @@ public class Population {
                     if(individuals[i][j].getStatus() == 'S'){
                         illToday++;
                         // individual might die
-                        if(RandomGenerator.generateRandom()<this.probOfDeath){
+                        if(RandomGenerator.generateRandom()<this.probabilityOfDeath){
                             killIndividual(i,j);
                         }
 
                         else { // individual still ill
                             individuals[i][j].individualillDays++;
-                                // individual might be cured according to the probabaility
-                            if (individuals[i][j].individualillDays < this.individualIllnessTime[1]) {
-                                if (RandomGenerator.generateRandom()<this.probOfCure){
-                                    cureIndividual(i,j);
-                                }
-                                // Individual survive the disease
-                            }else if(individuals[i][j].individualillDays >=this.individualIllnessTime[1]){
+                            // individual might be cured according to the probabaility
+                            if(individuals[i][j].individualillDays >=this.individualIllnessTime[1]){
                                 cureIndividual(i, j);
                             }
 
@@ -71,7 +65,7 @@ public class Population {
                             Individual[] directContactNeighbor = this.getIndividualDirectNeighbours(i, j);
                             for (int k = 0; k < directContactNeighbor.length; k++) {
                                 if (directContactNeighbor[k].getStatus() == 'H') {
-                                    if (RandomGenerator.generateRandom()<this.probOfInfection) {
+                                    if (RandomGenerator.generateRandom()<this.probabilityOfInfection) {
                                         infectedIndividualsToday.add(directContactNeighbor[k]);
                                     }
                                 }

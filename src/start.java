@@ -22,9 +22,9 @@ public class start {
                 System.out.println("Wrong inputs: max days are smaller than the min days. Start again");
             } else {
                 System.out.println("Enter probability of infection :");
-                population.probOfInfection = sc.nextDouble();
+                population.probabilityOfInfection = sc.nextDouble();
                 System.out.println("Enter probability of death:");
-                population.probOfDeath = sc.nextDouble();
+                population.probabilityOfDeath = sc.nextDouble();
                 System.out.println("Enter Number of initially people infected:");
                 numberOfInitiallyInfectedPeople = sc.nextInt();
 
