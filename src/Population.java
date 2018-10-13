@@ -19,7 +19,9 @@ public class Population {
     private int illToday;
     private int infectedToday;
 
-    public Population(int populationSize) {
+    private boolean showDetailedResults;
+
+    public Population(int populationSize, boolean showDetailedResults) {
         this.populationMatrixMaxLength = (int) Math.sqrt(populationSize);
         individuals = new Individual[populationMatrixMaxLength][populationMatrixMaxLength];
         for(int x = 0; x< populationMatrixMaxLength ; x++){
@@ -27,6 +29,7 @@ public class Population {
                 individuals[x][y] = new Individual(x,y);
             }
         }
+        this.showDetailedResults = showDetailedResults;
     }
 
     public int runSimulation(int initialIllNumber){
@@ -87,21 +90,23 @@ public class Population {
             }
             totalNumberOfDeaths += diedToday;
 
-//            System.out.println("Day: "+ day);
-//            this.showPopulation();
-//            System.out.println("");
-//            System.out.println("The number of individuals that becomes infected today: " + infectedToday);
-//            System.out.println("The number of individuals that died today: " + diedToday);
-//            System.out.println("The number of individuals that have recovered today: "+ recoveredToday);
-//            System.out.println("The number of ill individuals today: "+ totalNumberOfIllPeople);
-//            System.out.println("The accumulated number of deaths so far: "+ totalNumberOfDeaths);
-//            System.out.println("The accumulated number of infected individuals so far: "+ accumulatedInfectedIndividuals);
-//            System.out.println("");
+            if(showDetailedResults){
+                System.out.println("Day: "+ day);
+                this.showPopulation();
+                System.out.println("");
+                System.out.println("The number of individuals that becomes infected today: " + infectedToday);
+                System.out.println("The number of individuals that died today: " + diedToday);
+                System.out.println("The number of individuals that have recovered today: "+ recoveredToday);
+                System.out.println("The number of ill individuals today: "+ totalNumberOfIllPeople);
+                System.out.println("The accumulated number of deaths so far: "+ totalNumberOfDeaths);
+                System.out.println("The accumulated number of infected individuals so far: "+ accumulatedInfectedIndividuals);
+                System.out.println("");
+            }
         }
 
         System.out.println("The simulation lasted for " + day + " days, #infected people is: " + accumulatedInfectedIndividuals );
-        int populationSize = populationMatrixMaxLength*populationMatrixMaxLength/2;
-        if(accumulatedInfectedIndividuals > populationSize ) {
+        int populationSize = populationMatrixMaxLength*populationMatrixMaxLength;
+        if(accumulatedInfectedIndividuals > populationSize/2 ) {
             System.out.println("This is an epidemic, people who got infected: " + accumulatedInfectedIndividuals + " out of " + populationSize );
         }
         return accumulatedInfectedIndividuals;
@@ -154,5 +159,4 @@ public class Population {
     public int getSimulationDays() {
         return day;
     }
-
 }

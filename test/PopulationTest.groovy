@@ -3,19 +3,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 class PopulationTest extends GroovyTestCase {
-    Population testPopulation = new Population(500);
+    Population testPopulation = new Population(500, false);
     char X = 'X';
     char I = 'I';
     char S = 'S';
-
-    @Before
-    static void init() {
-        Population testPopulation = new Population(500);
-        testPopulation.individuals[10][10].setStatus('S');
-        testPopulation.individualIllnessTime[0] = 5;
-        testPopulation.individualIllnessTime[1] = 10;
-        testPopulation.probabilityOfDeath = 0;
-    }
 
     @Test
     void test_killIndividual() {
@@ -62,6 +53,7 @@ class PopulationTest extends GroovyTestCase {
         testPopulation.individualIllnessTime[0] = 5;
         testPopulation.individualIllnessTime[1] = 10;
         testPopulation.runSimulation(1);
+
         Assert.assertEquals('Should run for 10 days', 10, testPopulation.getSimulationDays())
         System.out.println("Unit test_runSimulation_noSickPeople finished without error.");
     }
@@ -73,6 +65,7 @@ class PopulationTest extends GroovyTestCase {
         testPopulation.individualIllnessTime[1] = 10;
         testPopulation.probabilityOfInfection = 1;
         testPopulation.runSimulation(1);
+
         Assert.assertEquals('Should all individuals get infected', 483, testPopulation.accumulatedInfectedIndividuals)
         System.out.println("Unit test_runSimulation_noSickPeople finished without error.");
     }
