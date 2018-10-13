@@ -7,7 +7,7 @@ public class Individual {
     * I = Immune
     * */
     private char status = 'H';
-    int individualillDays = 0;
+    int individualIllDays = 0;
     private int posX,posY;
 
     public Individual(int posX, int posY){
@@ -18,7 +18,7 @@ public class Individual {
         return this.status+"";
     }
 
-    public int getStatus() { return this.status; }
+    public char getStatus() { return this.status; }
     public void setStatus( char status) {
         this.status = status;
     }

@@ -12,6 +12,7 @@ public class Population {
     private int totalNumberOfIllPeople = 0;
     private int totalNumberOfDeaths =0;
     private int accumulatedInfectedIndividuals = 0;
+    private int day;
 
     private int diedToday;
     private int recoveredToday;
@@ -28,12 +29,11 @@ public class Population {
         }
     }
 
-    public void runSimulation(int initialIllNumber){
+    public int runSimulation(int initialIllNumber){
         populationMatrixMaxLength= individuals.length;
         totalNumberOfIllPeople += initialIllNumber;
         ArrayList<Individual> infectedIndividualsToday = new ArrayList<>();
-        int day = 0;
-        RandomGenerator.setRandomSeed();
+        day = 0;
 
         while(totalNumberOfIllPeople != 0){
             diedToday = 0;
@@ -49,24 +49,25 @@ public class Population {
                     // If Individual is ill
                     if(individuals[i][j].getStatus() == 'S'){
                         illToday++;
+
                         // individual might die
-                        if(RandomGenerator.generateRandom()<this.probabilityOfDeath){
+                        if(RandomGenerator.generateRandom() < this.probabilityOfDeath){
                             killIndividual(i,j);
                         }
 
                         else { // individual still ill
-                            individuals[i][j].individualillDays++;
+                            individuals[i][j].individualIllDays++;
                             // individual may survive
-                            if(individuals[i][j].individualillDays >=this.individualIllnessTime[1]){
+                            if(individuals[i][j].individualIllDays >= this.individualIllnessTime[1]){
                                 cureIndividual(i, j);
                             }
 
                             // Individual spread the disease
-                            Individual[] directContactNeighbor = this.getIndividualDirectNeighbours(i, j);
-                            for (int k = 0; k < directContactNeighbor.length; k++) {
-                                if (directContactNeighbor[k].getStatus() == 'H') {
+                            Individual[] directNeighbours = this.getIndividualDirectNeighbours(i, j);
+                            for (int k = 0; k < directNeighbours.length; k++) {
+                                if (directNeighbours[k].getStatus() == 'H') {
                                     if (RandomGenerator.generateRandom()<this.probabilityOfInfection) {
-                                        infectedIndividualsToday.add(directContactNeighbor[k]);
+                                        infectedIndividualsToday.add(directNeighbours[k]);
                                     }
                                 }
                             }
@@ -86,26 +87,34 @@ public class Population {
             }
             totalNumberOfDeaths += diedToday;
 
-            System.out.println("Day: "+ day);
-            this.showPopulation();
-            System.out.println("The number of individuals that becomes infected today: " + infectedToday);
-            System.out.println("The number of individuals that died today: " + diedToday);
-            System.out.println("The number of individuals that have recovered today: "+ recoveredToday);
-            System.out.println("The number of ill individuals today: "+ totalNumberOfIllPeople);
-            System.out.println("The accumulated number of infected individuals so far: "+ accumulatedInfectedIndividuals);
-            System.out.println("The accumulated number of deaths so far: "+ totalNumberOfDeaths);
-            System.out.println("");
+//            System.out.println("Day: "+ day);
+//            this.showPopulation();
+//            System.out.println("");
+//            System.out.println("The number of individuals that becomes infected today: " + infectedToday);
+//            System.out.println("The number of individuals that died today: " + diedToday);
+//            System.out.println("The number of individuals that have recovered today: "+ recoveredToday);
+//            System.out.println("The number of ill individuals today: "+ totalNumberOfIllPeople);
+//            System.out.println("The accumulated number of deaths so far: "+ totalNumberOfDeaths);
+//            System.out.println("The accumulated number of infected individuals so far: "+ accumulatedInfectedIndividuals);
+//            System.out.println("");
         }
+
+        System.out.println("The simulation lasted for " + day + " days, #infected people is: " + accumulatedInfectedIndividuals );
+        int populationSize = populationMatrixMaxLength*populationMatrixMaxLength/2;
+        if(accumulatedInfectedIndividuals > populationSize ) {
+            System.out.println("This is an epidemic, people who got infected: " + accumulatedInfectedIndividuals + " out of " + populationSize );
+        }
+        return accumulatedInfectedIndividuals;
     }
 
-    private void killIndividual(int x, int y) {
+    public void killIndividual(int x, int y) {
         individuals[x][y].setStatus('X');
         diedToday++;
         illToday--;
         totalNumberOfIllPeople--;
     }
 
-    private void cureIndividual(int x, int y) {
+    public void cureIndividual(int x, int y) {
         individuals[x][y].setStatus('I');
         recoveredToday++;
         illToday--;
@@ -135,11 +144,15 @@ public class Population {
         return neighbours.toArray(new Individual[neighbours.size()]);
     }
 
-    public Individual getIndividual(int x, int y) {
-        if ( x > 0 && x < populationMatrixMaxLength
-                && y > 0 && y < populationMatrixMaxLength)
+    private Individual getIndividual(int x, int y) {
+        if ( x >= 0 && x < populationMatrixMaxLength
+                && y >= 0 && y < populationMatrixMaxLength)
                 return individuals[x][y];
         return null;
+    }
+
+    public int getSimulationDays() {
+        return day;
     }
 
 }
