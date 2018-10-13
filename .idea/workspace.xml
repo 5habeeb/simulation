@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6d5a523-d659-46c8-a36f-1e35bbe9f806" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Population.java" afterPath="$PROJECT_DIR$/src/Population.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/start.java" afterPath="$PROJECT_DIR$/src/start.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/PopulationTest.groovy" afterPath="$PROJECT_DIR$/test/PopulationTest.groovy" />
     </list>
@@ -19,14 +18,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PopulationTest.groovy" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/PopulationTest.groovy">
+      <file leaf-file-name="start.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/start.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-880">
-              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="132">
+              <caret line="68" column="30" lean-forward="false" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,8 +73,8 @@
         <option value="$PROJECT_DIR$/src/Individual.java" />
         <option value="$PROJECT_DIR$/src/RandomGenerator.java" />
         <option value="$PROJECT_DIR$/src/Population.java" />
-        <option value="$PROJECT_DIR$/src/start.java" />
         <option value="$PROJECT_DIR$/test/PopulationTest.groovy" />
+        <option value="$PROJECT_DIR$/src/start.java" />
       </list>
     </option>
   </component>
@@ -390,7 +387,7 @@
       <option name="presentableId" value="Default" />
       <updated>1539075030141</updated>
       <workItem from="1539075034722" duration="32818000" />
-      <workItem from="1539174806307" duration="38376000" />
+      <workItem from="1539174806307" duration="38591000" />
     </task>
     <servers />
   </component>
@@ -427,7 +424,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71194000" />
+    <option name="totallyTimeSpent" value="71409000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -450,7 +447,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36104783" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16742598" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32801822" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -488,9 +485,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="858">
           <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-          <folding>
-            <marker date="1539460988803" expanded="true" signature="93:4269" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -688,19 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RandomGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="7" column="81" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="81" />
-          <folding>
-            <marker date="1539454784245" expanded="true" signature="1036:1047" ph=" { " />
-            <marker date="1539454784245" expanded="true" signature="1080:1086" ph=" }" />
-            <marker date="1539454784245" expanded="true" signature="1129:1140" ph=" { " />
-            <marker date="1539454784245" expanded="true" signature="1167:1173" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Population.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
@@ -719,23 +701,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/start.java">
+    <entry file="file://$PROJECT_DIR$/test/PopulationTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="71" column="51" lean-forward="false" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
+        <state relative-caret-position="198">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="9" />
           <folding>
-            <marker date="1539460988803" expanded="true" signature="93:4269" ph="{...}" />
+            <marker date="1539461322802" expanded="true" signature="7:45" ph="..." />
+            <marker date="1539461322802" expanded="true" signature="250:497" ph="{...}" />
+            <marker date="1539461322802" expanded="true" signature="540:787" ph="{...}" />
+            <marker date="1539461322802" expanded="true" signature="859:1123" ph="{...}" />
+            <marker date="1539461322802" expanded="true" signature="1195:1457" ph="{...}" />
+            <marker date="1539461322802" expanded="true" signature="1527:1789" ph="{...}" />
+            <marker date="1539461322802" expanded="true" signature="1844:2035" ph="{...}" />
+            <marker date="1539461322802" expanded="true" signature="2101:2558" ph="{...}" />
+            <marker date="1539461322802" expanded="true" signature="2626:3101" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/PopulationTest.groovy">
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-880">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        <state relative-caret-position="154">
+          <caret line="7" column="81" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="81" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1539454784245" expanded="false" signature="1036:1047" ph=" { " />
+            <marker date="1539454784245" expanded="false" signature="1080:1086" ph=" }" />
+            <marker date="1539454784245" expanded="false" signature="1129:1140" ph=" { " />
+            <marker date="1539454784245" expanded="false" signature="1167:1173" ph=" }" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/start.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="68" column="30" lean-forward="false" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>

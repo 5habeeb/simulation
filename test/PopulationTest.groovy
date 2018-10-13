@@ -1,5 +1,4 @@
 import org.junit.Assert
-import org.junit.Before;
 import org.junit.Test;
 
 class PopulationTest extends GroovyTestCase {
@@ -54,7 +53,7 @@ class PopulationTest extends GroovyTestCase {
         testPopulation.individualIllnessTime[1] = 10;
         testPopulation.runSimulation(1);
 
-        Assert.assertEquals('Should run for 10 days', 10, testPopulation.getSimulationDays())
+        Assert.assertEquals('Should run for 10 days only', 10, testPopulation.getSimulationDays())
         System.out.println("Unit test_runSimulation_noSickPeople finished without error.");
     }
 

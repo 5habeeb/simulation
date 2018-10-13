@@ -66,6 +66,7 @@ public class start {
 
 
         } else if( choice == 2) {
+            // Collect results
             System.out.println("Enter Probability of Infection as %");
             Scanner sc = new Scanner(System.in);
             double probabilityOfInfection = sc.nextDouble()/100;
