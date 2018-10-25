@@ -82,8 +82,8 @@ public class start {
                 System.out.println("seed #" + i);
                 results+= population.runSimulation(1);
             }
-            int median = results/100;
-            System.out.println("The average number of infected people for probabaility of infection "+ probabilityOfInfection*100 +"% is: " + median);
+            int mean = results/100;
+            System.out.println("The average number of infected people for probabaility of infection "+ probabilityOfInfection*100 +"% is: " + mean);
         }
     }
 }

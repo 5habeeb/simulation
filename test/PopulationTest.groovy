@@ -10,7 +10,7 @@ class PopulationTest extends GroovyTestCase {
     @Test
     void test_killIndividual() {
         testPopulation.killIndividual(10,10);
-        Assert.assertEquals("The sick person did not die!!!", X, testPopulation.individuals[10][10].getStatus());
+        Assert.assertEquals("The sick person died!!!", X, testPopulation.individuals[10][10].getStatus());
         System.out.println("Unit test_killIndividual finished without error.");
     }
 
@@ -28,15 +28,15 @@ class PopulationTest extends GroovyTestCase {
     }
 
     @Test
-    void test_getIndividualDirectNeighbours_cornerLocated() {
-        Assert.assertEquals('Should check when individual has 8 direct neighbours', 3, testPopulation.getIndividualDirectNeighbours(0,0).size());
-        System.out.println("Unit test_getIndividualDirectNeighbours_cornerLocated finished without error.");
+    void test_getIndividualDirectNeighbours_sideLocated() {
+        Assert.assertEquals('Should check when individual has 5 direct neighbours', 5, testPopulation.getIndividualDirectNeighbours(21,11).size());
+        System.out.println("Unit test_getIndividualDirectNeighbours_sideLocated finished without error.");
     }
 
     @Test
-    void test_getIndividualDirectNeighbours_sideLocated() {
-        Assert.assertEquals('Should check when individual has 8 direct neighbours', 5, testPopulation.getIndividualDirectNeighbours(21,11).size());
-        System.out.println("Unit test_getIndividualDirectNeighbours_sideLocated finished without error.");
+    void test_getIndividualDirectNeighbours_cornerLocated() {
+        Assert.assertEquals('Should check when individual has 3 direct neighbours', 3, testPopulation.getIndividualDirectNeighbours(0,0).size());
+        System.out.println("Unit test_getIndividualDirectNeighbours_cornerLocated finished without error.");
     }
 
     @Test
