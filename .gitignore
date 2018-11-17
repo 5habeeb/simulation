@@ -1,2 +1,5 @@
 .DS_Store
 .idea
+lib
+out
+disease-spread-simulation.iml
