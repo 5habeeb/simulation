@@ -70,10 +70,11 @@ public class start {
             System.out.println("Enter Probability of Infection as %");
             Scanner sc = new Scanner(System.in);
             double probabilityOfInfection = sc.nextDouble()/100;
-            population = new Population(1600, false);
+
 
             int results = 0;
             for (int i=0; i<100; i++) {
+                population = new Population(1600, false);
                 population.probabilityOfInfection = probabilityOfInfection;
                 population.individualIllnessTime[0] = 6;
                 population.individualIllnessTime[1] = 9;
