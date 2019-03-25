@@ -70,9 +70,11 @@ public class start {
             System.out.println("Enter Probability of Infection as %");
             Scanner sc = new Scanner(System.in);
             double probabilityOfInfection = sc.nextDouble()/100;
+            int result = 0;
+            int intervalMin = 1600;
+            int intervalMax = 0;
+            double results = 0;
 
-
-            int results = 0;
             for (int i=0; i<100; i++) {
                 population = new Population(1600, false);
                 population.probabilityOfInfection = probabilityOfInfection;
@@ -81,10 +83,21 @@ public class start {
                 population.individuals[20][20].setStatus('S');
                 RandomGenerator.setSeed(i);
                 System.out.println("seed #" + i);
-                results+= population.runSimulation(1);
+                result = population.runSimulation(1);
+
+                if (result < intervalMin && result != 0) {
+                    intervalMin = result;
+                }
+
+                if (result > intervalMax) {
+                    intervalMax = result;
+                }
+
+                results+= result;
             }
-            int mean = results/100;
-            System.out.println("The average number of infected people for probabaility of infection "+ probabilityOfInfection*100 +"% is: " + mean);
+            double mean = results/100;
+            System.out.println("\nThe average number of infected people for probabaility of infection "+ probabilityOfInfection*100 +"% is: " + mean);
+            System.out.println("results interval: [" + intervalMin + ", " + intervalMax + "]");
         }
     }
 }
